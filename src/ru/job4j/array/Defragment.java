@@ -5,7 +5,6 @@ public class Defragment {
     public static String[] compress(String[] array) {
         for (int index = 0; index < array.length; index++) {
             if (array[index] == null) {
-                /* переместить первую не null ячейку. Нужен цикл. */
                 for (int j = index + 1; j < array.length; j++) {
                     if (array[j] != null) {
                         array[index] = array[j];

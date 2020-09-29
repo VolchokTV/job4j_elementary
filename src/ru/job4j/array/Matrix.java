@@ -1,7 +1,6 @@
 package ru.job4j.array;
 
 public class Matrix {
-    @SuppressWarnings("checkstyle:EmptyBlock")
     public static int[][] multiple(int size) {
         int[][] table = new int[size][size];
         for (int row = 0; row < table.length; row++) {

@@ -27,6 +27,5 @@ public class Counter {
         System.out.println(sum(0, 1000));
         System.out.println(sum(0, 10000));
         System.out.println(sum(0, 50));
-
     }
 }
