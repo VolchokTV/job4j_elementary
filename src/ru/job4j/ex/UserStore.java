@@ -7,28 +7,23 @@ public class UserStore {
         for (User boec : users) {
             if (boec.getUsername().equals(login)) {
                 rsl = boec;
+                break;
             }
-            break;
         }
-                if (rsl == null) {
-                    throw new UserNotFoundException("Пользователь c таким именем не найден.");
+             if (rsl == null) {
+                 throw new UserNotFoundException("Пользователь c таким именем не найден.");
                 }
         return rsl;
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        boolean result = false;
-        if ((user.getUsername()).length() >= 3 && user.isValid()) {
-            result = true;
-        }
-        if (!result) {
+        if ((user.getUsername()).length() < 3 || !user.isValid()) {
             throw new UserInvalidException("Пользователь не соответствует требованиям допуска.");
         }
-        return result;
+        return true;
     }
 
     public static void main(String[] args) {
-
         User[] users = {new User("Petr Arsentev", true)};
         try {
              User user = findUser(users, "Petr Arsentev");
